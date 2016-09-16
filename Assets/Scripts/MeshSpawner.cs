@@ -60,4 +60,7 @@ public class MeshSpawner : MonoBehaviour
     
     }
 
+    public void destroyHex() {
+        Destroy(this.gameObject);
+    }
 }
