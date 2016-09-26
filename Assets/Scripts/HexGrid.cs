@@ -5,13 +5,12 @@ using UnityEngine.UI;
 
 public class HexGrid : MonoBehaviour {
 
-    [SerializeField]
-    private GameObject hexPref;
+    public GameObject hexPref;
 
     [SerializeField]
     private Slider sizeChanger;
 
-    public Camera camera;
+    public GameObject cameraMain;
 
     private List<GameObject> hexPrefList;
 
@@ -46,8 +45,8 @@ public class HexGrid : MonoBehaviour {
                 y++;
             }
         }
-
-        camera.transform.position = new Vector3(hexPrefList[size / 2].transform.position.x, size * 2, hexPrefList[size * size / 2].transform.position.z);
+        print(size);
+        cameraMain.gameObject.transform.position = new Vector3(hexPrefList[size / 2].transform.position.x, size * 2 , hexPrefList[size * size / 2].transform.position.z);
     }
 
     void changeSize() {
